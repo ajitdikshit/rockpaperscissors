@@ -111,7 +111,7 @@
       localStorage.setItem("rps-score", JSON.stringify(score));
       localStorage.setItem("history",document.getElementById("scoretext").innerHTML);
 
-      if(score.userscore>=10){
+      if(score.userscore==10){
         document.getElementById("playarea").style.display='none';
          localStorage.removeItem("rps-score");
          localStorage.removeItem("history");
@@ -122,7 +122,7 @@
         document.getElementById("winlose").style.display='block';
         document.getElementById("wintext").innerHTML ="CONGRATS!...YOU WIN!...";
       }
-      else if(score.compscore>=10){
+      else if(score.compscore==10){
         document.getElementById("playarea").style.display='none';
          localStorage.removeItem("rps-score");
          localStorage.removeItem("history");
