@@ -97,3 +97,19 @@
     color: black;
     background-color: black;
 }
+.wintexts{
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 900;
+    vertical-align: middle;
+    text-shadow: 5px 5px 10px rgb(0, 250, 225);
+    transition:0.7s;
+}
+.wintexts:hover{
+        text-shadow: 5px 5px 25px rgb(0, 250, 225);
+        transform: scale(1.2);
+
+}
+.playagain{
+    text-align: center;
+}
