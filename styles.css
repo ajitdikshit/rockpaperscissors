@@ -1,0 +1,91 @@
+.play{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+.move{
+    
+    flex: 1;
+    height: 400px;
+    flex-direction: row;
+}
+.header{
+    background-color: rgba(231, 8, 205, 0.338);
+    padding:3%;
+    height:20px;
+    font-family: "Tagesschrift", system-ui;
+    font-size: 150%;
+    transition:0.5s;
+    box-shadow: 5px 5px 1000px rgb(0, 250, 225);
+    vertical-align: middle;
+    color: rgb(0, 250, 225);
+    transition: 0.5s;
+    vertical-align: middle;
+    text-align: center;
+}
+.header:hover{
+    height:25px;
+    
+    box-shadow: 5px 5px 10px rgba(0, 250, 225, 0.397);
+}
+.score{
+    transition: 0.5s;
+   
+   }
+.score:hover{
+    font-size: 25px;
+}
+.playbutton{
+   margin-left: 20%;
+    transition: 0.5s;
+    width:60%;
+    margin-top: 40px;
+    margin-right: 20px;
+    height: 45px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 30px;
+    color:  rgb(0, 250, 225);
+    background-color: rgba(231, 8, 205, 0.338);
+    box-shadow: 2px 2px 50px rgb(0, 250, 225);
+    vertical-align: middle;
+}
+.playbutton:hover{
+    transform: scale(1.1);
+    box-shadow: 5px 5px 10px rgb(0, 250, 225);
+}
+.playarea{
+    vertical-align: middle;
+    
+}
+.images{
+    width:60%;
+    height: relative;
+    margin-left: 20%;
+    margin-top: 25px;
+    transition: 0.5s;
+    display: inline-block;
+    
+}
+.images:hover{
+    transform: scale(1.1);
+    box-shadow: 5px 5px 100px rgb(0, 250, 225);
+}
+.scoretext{
+    transition:0.3s;
+     color:  rgb(0, 250, 225);
+     font-size: 250%;
+}
+.heading{
+    text-align: center;
+    transition:0.7s;
+    text-shadow: 5px 5px 10px rgb(0, 250, 225);
+}
+.heading:hover{
+    transform: scale(1.2);
+    text-shadow: 5px 5px 25px rgb(0, 250, 225);
+}
+.bodyindex{
+    color: rgb(0, 250, 225);
+    background-color: black;
+}

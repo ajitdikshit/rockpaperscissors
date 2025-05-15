@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="styles.css">
+   
+    <head>
+ 
+        <title>ROCK PAPER SCISSORS GAME</title>
+        <body class="bodyindex" style="background-image: url('sps.png');">
+            <div id="indexcontent" class="index" style="display:block">
+                <h1 class="heading">Rock Paper Scissors Game</h1>
+        <h2 class="heading">By AJIT DIKSHIT</h2>
+        <button class="playbutton" onclick="startgame()">play game</button>
+        </div>
+            <div  id="playarea" style="display: none;">
+                 <header class="header">
+                <span class="score" id="user">User score=0</span>
+                <span class="score" id="comp">Computer score=0</span>
+            </header>
+            <div class="play">
+            <div class="move">
+            <img class="images" src="brick.webp" onclick="rockselected()">
+            <button class="playbutton" onclick="rockselected()">ROCK</button>
+            </div>
+                
+            <div class="move">
+            <img class="images" src="paper.avif" onclick="paperselected()">
+            <button class="playbutton" onclick="paperselected()">PAPER</button>
+            </div>
+
+            <div class="move">
+            <img class="images" src="scissors.jpg" onclick="scissorsselected()">
+            <button class="playbutton" onclick="scissorsselected()">SCISSORS</button>
+            </div>
+          </div>
+               
+          
+           
+           
+            <button class="playbutton" onclick="reset()">RESET SCORE</button>
+            <p id="scoretext" class="scoretext"></p>
+        </div>
+        </body>
+        <script>
+             let score = {
+      userscore: 0,
+      compscore: 0
+    };
+    let history="";
+    const savedScore = localStorage.getItem("rps-score");
+    const historysave=localStorage.getItem("history");
+    if(historysave) {
+    document.getElementById("scoretext").innerHTML=historysave;
+    }
+    if (savedScore) {
+      score = JSON.parse(savedScore);
+    }
+
+    document.getElementById("user").innerHTML = "User score=" + score.userscore;
+    document.getElementById("comp").innerHTML = "Computer score=" + score.compscore;
+
+    let usermove = "";
+    let makemove = "";
+
+    function startgame(){
+      document.getElementById("playarea").style.display='block';
+      document.getElementById("indexcontent").style.display='none';
+    }
+    function rockselected() {
+      usermove = "rock";
+      selectmove();
+    }
+
+    function paperselected() {
+      usermove = "paper";
+      selectmove();
+    }
+
+    function scissorsselected() {
+      usermove = "scissors";
+      selectmove();
+    }
+
+    function compare() {
+      if (makemove === usermove) {
+      document.getElementById("scoretext").innerHTML = `Match tied! You chose ${usermove}, computer chose ${makemove}`;
+      } else if (
+        (usermove === "rock" && makemove === "scissors") ||
+        (usermove === "paper" && makemove === "rock") ||
+        (usermove === "scissors" && makemove === "paper")
+      ) {
+        score.userscore++;
+            document.getElementById("scoretext").innerHTML = `You won! You chose ${usermove}, computer chose ${makemove}`;
+      } else {
+        score.compscore++;
+            document.getElementById("scoretext").innerHTML = `You lost! You chose ${usermove}, computer chose ${makemove}`;
+
+      }
+
+      document.getElementById("user").innerHTML = "User score=" + score.userscore;
+      document.getElementById("comp").innerHTML = "Computer score=" + score.compscore;
+
+      localStorage.setItem("rps-score", JSON.stringify(score));
+      localStorage.setItem("history",document.getElementById("scoretext").innerHTML);
+    }
+
+    function selectmove() {
+      const move = Math.random();
+      if (move < 1 / 3) {
+        makemove = "rock";
+      } else if (move < 2 / 3) {
+        makemove = "paper";
+      } else {
+        makemove = "scissors";
+      }
+      compare();
+    }
+    function reset(){
+         localStorage.removeItem("rps-score");
+         localStorage.removeItem("history")
+
+    score = {
+        userscore: 0,
+        compscore: 0};
+        document.getElementById("user").innerHTML = "User score=" + score.userscore;
+        document.getElementById("comp").innerHTML = "Computer score=" + score.compscore;
+        document.getElementById("scoretext").innerHTML = "";
+    }
+        </script>
+    </head>
+</html>
