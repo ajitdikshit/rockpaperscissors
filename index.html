@@ -42,6 +42,12 @@
             <button class="playbutton" onclick="reset()">RESET SCORE</button>
             <p id="scoretext" class="scoretext"></p>
         </div>
+
+        <div id="winlose"  style="display: none;">
+          <h1 class="wintexts" id="wintext">hi</h1>
+          <a class="playagain" href="https://ajitdikshit.github.io/rockpaperscissors/">PLAY AGAIN</a>
+
+        </div>
         </body>
         <script>
              let score = {
@@ -104,6 +110,29 @@
 
       localStorage.setItem("rps-score", JSON.stringify(score));
       localStorage.setItem("history",document.getElementById("scoretext").innerHTML);
+
+      if(score.userscore>=10){
+        document.getElementById("playarea").style.display='none';
+         localStorage.removeItem("rps-score");
+         localStorage.removeItem("history");
+
+    score = {
+        userscore: 0,
+        compscore: 0};
+        document.getElementById("winlose").style.display='block';
+        document.getElementById("wintext").innerHTML ="CONGRATS!...YOU WIN!...";
+      }
+      else if(score.compscore>=10){
+        document.getElementById("playarea").style.display='none';
+         localStorage.removeItem("rps-score");
+         localStorage.removeItem("history");
+
+    score = {
+        userscore: 0,
+        compscore: 0};
+        document.getElementById("winlose").style.display='block';
+        document.getElementById("wintext").innerHTML ="YOU LOSE...BETTER LUCK NEXT TIME!";
+      }
     }
 
     function selectmove() {
