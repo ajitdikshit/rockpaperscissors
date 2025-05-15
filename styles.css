@@ -10,23 +10,25 @@
     flex-direction: row;
 }
 .header{
-    background-color: rgba(231, 8, 205, 0.338);
+    background-color: rgb(8, 157, 231);
     padding:3%;
     height:20px;
     font-family: "Tagesschrift", system-ui;
     font-size: 150%;
     transition:0.5s;
-    box-shadow: 5px 5px 1000px rgb(0, 250, 225);
+    box-shadow:  5px 5px 10px rgba(0, 250, 225, 0.397);
     vertical-align: middle;
-    color: rgb(0, 250, 225);
+    color: black;
     transition: 0.5s;
     vertical-align: middle;
     text-align: center;
+    font-weight: 900;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
 }
 .header:hover{
     height:25px;
-    
-    box-shadow: 5px 5px 10px rgba(0, 250, 225, 0.397);
+    box-shadow: 5px 5px 1000px rgb(0, 250, 225);
 }
 .score{
     transition: 0.5s;
@@ -36,23 +38,27 @@
     font-size: 25px;
 }
 .playbutton{
-   margin-left: 20%;
+    margin-left: 20%;
     transition: 0.5s;
     width:60%;
     margin-top: 40px;
     margin-right: 20px;
     height: 45px;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 900;
     border-radius: 30px;
-    color:  rgb(0, 250, 225);
-    background-color: rgba(231, 8, 205, 0.338);
-    box-shadow: 2px 2px 50px rgb(0, 250, 225);
+    color:  black;
+    background-color: rgb(8, 157, 231);
+    box-shadow:  5px 5px 10px rgb(0, 250, 225);
     vertical-align: middle;
+    opacity:1;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
 }
 .playbutton:hover{
     transform: scale(1.1);
-    box-shadow: 5px 5px 10px rgb(0, 250, 225);
+    box-shadow: 2px 2px 50px rgb(0, 250, 225);
+    font-size: 25px;
 }
 .playarea{
     vertical-align: middle;
@@ -73,8 +79,10 @@
 }
 .scoretext{
     transition:0.3s;
-     color:  rgb(0, 250, 225);
+     color:  black;
      font-size: 250%;
+     font-weight: 900;
+     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .heading{
     text-align: center;
@@ -86,6 +94,6 @@
     text-shadow: 5px 5px 25px rgb(0, 250, 225);
 }
 .bodyindex{
-    color: rgb(0, 250, 225);
+    color: black;
     background-color: black;
 }
